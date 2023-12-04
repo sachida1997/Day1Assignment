@@ -1,0 +1,1340 @@
+{
+	"info": {
+		"_postman_id": "78004df3-86d1-4156-bd87-c6f23102ee4a",
+		"name": "Stock Listing Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api-gateway",
+			"item": [
+				{
+					"name": "authentication-service",
+					"item": [
+						{
+							"name": "Register User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"himanshu\",\r\n  \"email\": \"himanshu@gmail.com\",\r\n  \"roles\": [\"ROLE_CUSTOMER\"],\r\n  \"password\": \"password123\",\r\n  \"securityQuestion\": \"What is your favorite color?\",\r\n  \"securityAnswer\": \"Red\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/authentication/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"authentication",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"himanshu\",\r\n  \"password\": \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/authentication/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"authentication",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register Admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"admin\",\r\n  \"email\": \"admin@gmail.com\",\r\n  \"roles\": [\"admin\"],\r\n  \"password\": \"password123\",\r\n  \"securityQuestion\": \"What is your favorite color?\",\r\n  \"securityAnswer\": \"Red\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/authentication/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"authentication",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login Admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/authentication/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"authentication",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validate Token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzAxNjA5NTQ4LCJleHAiOjE3MDE2OTU5NDh9.hxkSmR-S--b8m65P6ffxj7jwAmCjK1hWoBT74t0qQt_N4bcdXqNexuGgXmfhFsxn5dlQe4wsqir8ZNsZwYJrUg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/authentication/validate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"authentication",
+										"validate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Forgot Password",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"himanshu\",\r\n  \"newPassword\": \"newPassword123\",\r\n  \"secQuestion\": \"What is your favorite color?\",\r\n  \"secAnswer\": \"Red\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/authentication/forgot",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"authentication",
+										"forgot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All User (admin)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiUk9MRV9BRE1JTiIsImlhdCI6MTcwMTYwMzU5MiwiZXhwIjoxNzAxNjg5OTkyfQ.4Tdv_x8rWNWRWiYaZmkJZpeFCr7_zswpX6LWGVcqwooLtzlAIDQl27sugjwDua5mBhgq3cCIeLFp4ARVy5qnMg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/authentication/getAllUsers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"authentication",
+										"getAllUsers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User (admin)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiUk9MRV9BRE1JTiIsImlhdCI6MTcwMTYwMzU5MiwiZXhwIjoxNzAxNjg5OTkyfQ.4Tdv_x8rWNWRWiYaZmkJZpeFCr7_zswpX6LWGVcqwooLtzlAIDQl27sugjwDua5mBhgq3cCIeLFp4ARVy5qnMg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/authentication/deleteUser?userId=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"authentication",
+										"deleteUser"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "stock-service",
+					"item": [
+						{
+							"name": "Get Stocks by Country (admin / customer)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzAxNjA5NTQ4LCJleHAiOjE3MDE2OTU5NDh9.hxkSmR-S--b8m65P6ffxj7jwAmCjK1hWoBT74t0qQt_N4bcdXqNexuGgXmfhFsxn5dlQe4wsqir8ZNsZwYJrUg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/stocks/country/India",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"stocks",
+										"country",
+										"India"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "userprofile-service",
+					"item": [
+						{
+							"name": "Get All Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/userProfile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"userProfile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User Profile by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/userProfile/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"userProfile",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save User Profile",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 1,\r\n  \"username\": \"Himanshu\",\r\n  \"firstName\": \"himanshu\",\r\n  \"lastName\": \"gaurav\",\r\n  \"number\": 1234567890,\r\n  \"dateOfBirth\": \"1998-12-04\",\r\n  \"email\": \"himanshu@gmail.com\",\r\n  \"roles\": [\"ROLE_CUSTOMER\"],\r\n  \"password\": \"Password123\",\r\n  \"securityQuestion\": \"What is your favorite color?\",\r\n  \"securityAnswer\": \"Red\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/userProfile/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"userProfile",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User Profile",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 1,\r\n  \"username\": \"rahul\",\r\n  \"firstName\": \"rahul\",\r\n  \"lastName\": \"kumar\",\r\n  \"number\": 9876543210,\r\n  \"dateOfBirth\": \"1996-10-04\",\r\n  \"email\": \"rahul@gmail.com\",\r\n  \"roles\": [\"ROLE_CUSTOMER\", \"ROLE_ADMIN\"],\r\n  \"securityQuestion\": \"What is your pet's name?\",\r\n  \"securityAnswer\": \"Tommy\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/userProfile/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"userProfile",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User Profile by Username",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/userProfile/getProfile/Himanshu",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"userProfile",
+										"getProfile",
+										"Himanshu"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "whishlist-service",
+					"item": [
+						{
+							"name": "Get whishlist By User ID (admin / customer)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaW1hbnNodSIsInJvbGUiOiJST0xFX0NVU1RPTUVSIiwiaWF0IjoxNzAxNjEwNjQ4LCJleHAiOjE3MDE2OTcwNDh9.bwmeUtoaQZTm0kvNVTh8F6p0_BxPHf1_GMzOAgrmmkFdxJGnZZrQuQza2-G148lHrRdQAZi7UwhM7C5VeaOhFw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/wishlist/getByUserId/himanshu",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"wishlist",
+										"getByUserId",
+										"himanshu"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Stock To Wishlist (admin / customer)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaW1hbnNodSIsInJvbGUiOiJST0xFX0NVU1RPTUVSIiwiaWF0IjoxNzAxNjEwNjQ4LCJleHAiOjE3MDE2OTcwNDh9.bwmeUtoaQZTm0kvNVTh8F6p0_BxPHf1_GMzOAgrmmkFdxJGnZZrQuQza2-G148lHrRdQAZi7UwhM7C5VeaOhFw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"symbol\": \"08GPG\",\r\n    \"name\": \"Nippon India Mutual Fund\",\r\n    \"currency\": \"INR\",\r\n    \"exchange\": \"BSE\",\r\n    \"mic_code\": \"XBOM\",\r\n    \"country\": \"India\",\r\n    \"type\": \"Common Stock\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/wishlist/addItem",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"wishlist",
+										"addItem"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete From wishlist (admin / customer)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzAxNjA5NTQ4LCJleHAiOjE3MDE2OTU5NDh9.hxkSmR-S--b8m65P6ffxj7jwAmCjK1hWoBT74t0qQt_N4bcdXqNexuGgXmfhFsxn5dlQe4wsqir8ZNsZwYJrUg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/wishlist/delete/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"wishlist",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Wishlist (admin / customer)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzAxNjA5NTQ4LCJleHAiOjE3MDE2OTU5NDh9.hxkSmR-S--b8m65P6ffxj7jwAmCjK1hWoBT74t0qQt_N4bcdXqNexuGgXmfhFsxn5dlQe4wsqir8ZNsZwYJrUg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"symbol\": \"360ONE\",\r\n    \"name\": \"360 ONE WAM LIMITED\",\r\n    \"currency\": \"INR\",\r\n    \"exchange\": \"BSE\",\r\n    \"mic_code\": \"XBOM\",\r\n    \"country\": \"India\",\r\n    \"type\": \"Common Stock\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/wishlist/update/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"wishlist",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Stocks in Wishlist (admin / customer)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzAxNjA5NTQ4LCJleHAiOjE3MDE2OTU5NDh9.hxkSmR-S--b8m65P6ffxj7jwAmCjK1hWoBT74t0qQt_N4bcdXqNexuGgXmfhFsxn5dlQe4wsqir8ZNsZwYJrUg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/wishlist/getAll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"wishlist",
+										"getAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AuthClient",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzAxNjA5NTQ4LCJleHAiOjE3MDE2OTU5NDh9.hxkSmR-S--b8m65P6ffxj7jwAmCjK1hWoBT74t0qQt_N4bcdXqNexuGgXmfhFsxn5dlQe4wsqir8ZNsZwYJrUg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/v1.0/authentication/validate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1.0",
+										"authentication",
+										"validate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "authentication-service",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"himanshu\",\r\n  \"email\": \"himanshu@gmail.com\",\r\n  \"roles\": [\"ROLE_CUSTOMER\"],\r\n  \"password\": \"password123\",\r\n  \"securityQuestion\": \"What is your favorite color?\",\r\n  \"securityAnswer\": \"Red\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9096/api/v1.0/authentication/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9096",
+							"path": [
+								"api",
+								"v1.0",
+								"authentication",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"himanshu\",\r\n  \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9096/api/v1.0/authentication/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9096",
+							"path": [
+								"api",
+								"v1.0",
+								"authentication",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"admin\",\r\n  \"email\": \"admin@gmail.com\",\r\n  \"roles\": [\"admin\"],\r\n  \"password\": \"password123\",\r\n  \"securityQuestion\": \"What is your favorite color?\",\r\n  \"securityAnswer\": \"Red\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9096/api/v1.0/authentication/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9096",
+							"path": [
+								"api",
+								"v1.0",
+								"authentication",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9096/api/v1.0/authentication/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9096",
+							"path": [
+								"api",
+								"v1.0",
+								"authentication",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzAxNjA5NTQ4LCJleHAiOjE3MDE2OTU5NDh9.hxkSmR-S--b8m65P6ffxj7jwAmCjK1hWoBT74t0qQt_N4bcdXqNexuGgXmfhFsxn5dlQe4wsqir8ZNsZwYJrUg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9096/api/v1.0/authentication/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9096",
+							"path": [
+								"api",
+								"v1.0",
+								"authentication",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"himanshu\",\r\n  \"newPassword\": \"newPassword123\",\r\n  \"secQuestion\": \"What is your favorite color?\",\r\n  \"secAnswer\": \"Red\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9096/api/v1.0/authentication/forgot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9096",
+							"path": [
+								"api",
+								"v1.0",
+								"authentication",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All User (admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiUk9MRV9BRE1JTiIsImlhdCI6MTcwMTYwMzU5MiwiZXhwIjoxNzAxNjg5OTkyfQ.4Tdv_x8rWNWRWiYaZmkJZpeFCr7_zswpX6LWGVcqwooLtzlAIDQl27sugjwDua5mBhgq3cCIeLFp4ARVy5qnMg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9096/api/v1.0/authentication/getAllUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9096",
+							"path": [
+								"api",
+								"v1.0",
+								"authentication",
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User (admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEiLCJyb2xlIjoiUk9MRV9BRE1JTiIsImlhdCI6MTcwMTYwMzU5MiwiZXhwIjoxNzAxNjg5OTkyfQ.4Tdv_x8rWNWRWiYaZmkJZpeFCr7_zswpX6LWGVcqwooLtzlAIDQl27sugjwDua5mBhgq3cCIeLFp4ARVy5qnMg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9096/api/v1.0/authentication/deleteUser?userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9096",
+							"path": [
+								"api",
+								"v1.0",
+								"authentication",
+								"deleteUser"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "config-server",
+			"item": []
+		},
+		{
+			"name": "eureka-server",
+			"item": [
+				{
+					"name": "eureka",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8761",
+							"host": [
+								"localhost"
+							],
+							"port": "8761"
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "stock-service",
+			"item": [
+				{
+					"name": "Get Stocks by Country (admin / customer)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzAxNjA5NTQ4LCJleHAiOjE3MDE2OTU5NDh9.hxkSmR-S--b8m65P6ffxj7jwAmCjK1hWoBT74t0qQt_N4bcdXqNexuGgXmfhFsxn5dlQe4wsqir8ZNsZwYJrUg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9093/api/v1.0/stocks/country/India",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9093",
+							"path": [
+								"api",
+								"v1.0",
+								"stocks",
+								"country",
+								"India"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "userprofile-service",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/v1.0/userProfile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1.0",
+								"userProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Profile by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/v1.0/userProfile/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1.0",
+								"userProfile",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save User Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"username\": \"Himanshu\",\r\n  \"firstName\": \"himanshu\",\r\n  \"lastName\": \"gaurav\",\r\n  \"number\": 1234567890,\r\n  \"dateOfBirth\": \"1998-12-04\",\r\n  \"email\": \"himanshu@gmail.com\",\r\n  \"roles\": [\"ROLE_CUSTOMER\"],\r\n  \"password\": \"Password123\",\r\n  \"securityQuestion\": \"What is your favorite color?\",\r\n  \"securityAnswer\": \"Red\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/api/v1.0/userProfile/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1.0",
+								"userProfile",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"username\": \"rahul\",\r\n  \"firstName\": \"rahul\",\r\n  \"lastName\": \"kumar\",\r\n  \"number\": 9876543210,\r\n  \"dateOfBirth\": \"1996-10-04\",\r\n  \"email\": \"rahul@gmail.com\",\r\n  \"roles\": [\"ROLE_CUSTOMER\", \"ROLE_ADMIN\"],\r\n  \"securityQuestion\": \"What is your pet's name?\",\r\n  \"securityAnswer\": \"Tommy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/api/v1.0/userProfile/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1.0",
+								"userProfile",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Profile by Username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/api/v1.0/userProfile/getProfile/Himanshu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"api",
+								"v1.0",
+								"userProfile",
+								"getProfile",
+								"Himanshu"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "whishlist-service",
+			"item": [
+				{
+					"name": "Get whishlist By User ID (admin / customer)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaW1hbnNodSIsInJvbGUiOiJST0xFX0NVU1RPTUVSIiwiaWF0IjoxNzAxNjEwNjQ4LCJleHAiOjE3MDE2OTcwNDh9.bwmeUtoaQZTm0kvNVTh8F6p0_BxPHf1_GMzOAgrmmkFdxJGnZZrQuQza2-G148lHrRdQAZi7UwhM7C5VeaOhFw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9094/api/v1.0/wishlist/getByUserId/himanshu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9094",
+							"path": [
+								"api",
+								"v1.0",
+								"wishlist",
+								"getByUserId",
+								"himanshu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Stock To Wishlist (admin / customer)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoaW1hbnNodSIsInJvbGUiOiJST0xFX0NVU1RPTUVSIiwiaWF0IjoxNzAxNjEwNjQ4LCJleHAiOjE3MDE2OTcwNDh9.bwmeUtoaQZTm0kvNVTh8F6p0_BxPHf1_GMzOAgrmmkFdxJGnZZrQuQza2-G148lHrRdQAZi7UwhM7C5VeaOhFw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"symbol\": \"08GPG\",\r\n    \"name\": \"Nippon India Mutual Fund\",\r\n    \"currency\": \"INR\",\r\n    \"exchange\": \"BSE\",\r\n    \"mic_code\": \"XBOM\",\r\n    \"country\": \"India\",\r\n    \"type\": \"Common Stock\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9094/api/v1.0/wishlist/addItem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9094",
+							"path": [
+								"api",
+								"v1.0",
+								"wishlist",
+								"addItem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete From wishlist (admin / customer)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzAxNjA5NTQ4LCJleHAiOjE3MDE2OTU5NDh9.hxkSmR-S--b8m65P6ffxj7jwAmCjK1hWoBT74t0qQt_N4bcdXqNexuGgXmfhFsxn5dlQe4wsqir8ZNsZwYJrUg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9094/api/v1.0/wishlist/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9094",
+							"path": [
+								"api",
+								"v1.0",
+								"wishlist",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Wishlist (admin / customer)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzAxNjA5NTQ4LCJleHAiOjE3MDE2OTU5NDh9.hxkSmR-S--b8m65P6ffxj7jwAmCjK1hWoBT74t0qQt_N4bcdXqNexuGgXmfhFsxn5dlQe4wsqir8ZNsZwYJrUg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"symbol\": \"360ONE\",\r\n    \"name\": \"360 ONE WAM LIMITED\",\r\n    \"currency\": \"INR\",\r\n    \"exchange\": \"BSE\",\r\n    \"mic_code\": \"XBOM\",\r\n    \"country\": \"India\",\r\n    \"type\": \"Common Stock\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9094/api/v1.0/wishlist/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9094",
+							"path": [
+								"api",
+								"v1.0",
+								"wishlist",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Stocks in Wishlist (admin / customer)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzAxNjA5NTQ4LCJleHAiOjE3MDE2OTU5NDh9.hxkSmR-S--b8m65P6ffxj7jwAmCjK1hWoBT74t0qQt_N4bcdXqNexuGgXmfhFsxn5dlQe4wsqir8ZNsZwYJrUg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9094/api/v1.0/wishlist/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9094",
+							"path": [
+								"api",
+								"v1.0",
+								"wishlist",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AuthClient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzAxNjA5NTQ4LCJleHAiOjE3MDE2OTU5NDh9.hxkSmR-S--b8m65P6ffxj7jwAmCjK1hWoBT74t0qQt_N4bcdXqNexuGgXmfhFsxn5dlQe4wsqir8ZNsZwYJrUg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9096/api/v1.0/authentication/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9096",
+							"path": [
+								"api",
+								"v1.0",
+								"authentication",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

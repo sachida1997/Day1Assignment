@@ -1,0 +1,42 @@
+authentication-service:-------------------------------------
+
+delete from roles where id in (1,2);
+delete from user_role where user_id =1;
+delete from users where id =1 ;
+
+alter table roles auto_increment=1;
+alter table user_role auto_increment=1;
+alter table users auto_increment=1;
+
+select * from roles;
+select * from user_role;
+select * from users;
+
+
+INSERT INTO roles(name) VALUES('ROLE_ADMIN');
+INSERT INTO roles(name) VALUES('ROLE_CUSTOMER');
+
+userprofile-service:--------------------------------------
+
+use userprofiledb;
+
+select * from user_profile;
+select * from user_profile_seq;
+
+delete from user_profile where id =1;
+delete from user_profile_seq where next_val=51;
+
+
+alter table user_profile auto_increment=1;
+alter table user_profile_seq auto_increment=1;
+
+INSERT INTO userprofiledb.user_profile_seq (next_val) VALUES (51);
+
+
+kafka:--------------------------------------------------------
+
+1.to show the topics:
+kafka-topics.bat --bootstrap-server localhost:9092 --list
+
+2.Here's an example command to consume messages from the "stockapp_json" topic:
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic stockapp_json --from-beginning
