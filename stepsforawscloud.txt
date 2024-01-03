@@ -1,0 +1,14 @@
+
+1. I created a static website with three html pages : index.html, contact.html, and about.html.
+ 
+2. In AWS Management Console, I navigated to the S3 service and created a new S3 bucket with name day23-assignment1-dr.
+ 
+3. I uploaded all the files (index.html, contact.html, and about.html) and image files to the S3 bucket.
+ 
+4. In S3 bucket properties, I navigated to "Static website hosting".
+ 
+5. I enabled static website hosting and set the index document to index.html.
+ 
+6. I implemented a bucket policy to allow public read access to the objects in the bucket.
+ 
+7. I tested the website by navigating through different pages and interacting with the contact form.
